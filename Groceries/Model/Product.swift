@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct Product: Hashable, Identifiable {
+struct Product: Identifiable {
+
+    
     var id: UUID = UUID()
     var description: String = ""
     var image: String = ""

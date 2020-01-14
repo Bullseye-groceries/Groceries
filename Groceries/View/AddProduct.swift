@@ -9,25 +9,27 @@
 import SwiftUI
 
 struct AddProduct: View {
-    
-    var product: Product
+    @Binding var listProducts : [Product]
+
+    @State var product: Product = Product()
     
     var body: some View {
+        
         VStack {
-            Image(product.image).resizable().frame(width: 100, height: 100, alignment: .center)
-            Text(product.description)
-            Text(product.ean)
             Spacer()
+            //TODO: FIXME: Image(product.image).resizable().frame(width: 100, height: 100, alignment: .center)
             
-       
-                        HStack {
-                            Text(payment.merchant)
-                            Text("R$ \(payment.price)")
-                            Text("\(payment.units) unids")
-                            Text("DateFormatter.dateFormat(fromTemplate: 'dd/MM/yyyy', options: 1, locale: .current))")
-                        }
-                }
+            TextField("Descrição", text: $product.description)
+            TextField("EAN", text: $product.ean)
+            Spacer()
+            Button(action: {
+                print("Adding product...")
+                //self.$listProducts.append(self.product)
+            }) {
+                Text("Cadastrar produto")
+            }
+            Spacer()
             }
         }
-    }
+    
 }

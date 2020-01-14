@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct Payment: Hashable, Identifiable {
+struct Payment: Identifiable  {
+
+    
     var id: UUID = UUID()
-    var merchant: String
-    var price: Double
-    var units: Double
-    var paidAt: Date
+    var merchant: String = ""
+    var price: Double = 0.0
+    var units: Double = 0.0
+    var paidAt: Date = Date.init()
+    
+    
 }

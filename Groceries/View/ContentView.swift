@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var content : ContentData
     var body: some View {
         TabView {
-            Home()
+            Home(listProducts: content.listProducts)
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Produtos")
             }
-            AddProduct()
+            AddProduct(listProducts: $content.listProducts)
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Cadastrar")
