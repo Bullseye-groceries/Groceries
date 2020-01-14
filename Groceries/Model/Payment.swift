@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct Payment: Hashable, Identifiable {
+    var id: UUID = UUID()
+    var merchant: String
+    var price: Double
+    var units: Double
+    var paidAt: Date
+}

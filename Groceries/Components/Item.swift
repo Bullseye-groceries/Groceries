@@ -14,12 +14,16 @@ struct Item: View {
     
     var body: some View {
         
-        return NavigationLink(destination: DetailProduct(product: product)) { HStack {
-            Image(systemName: "person")
+        return HStack {
+            Image(product.image).resizable().frame(width: 50, height: 50)
             Spacer()
-            Text(product.description).bold().font(.system(size: 20))
-            Spacer()
-            Text("RS 13.77")
+            NavigationLink(destination: DetailProduct(product: product)) {
+                VStack {
+                    Text(product.description).bold().font(.system(size: 20))
+                    Spacer()
+                    Text("RS 13.77")
+                }
+                
             }
         }
     }

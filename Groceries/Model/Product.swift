@@ -13,4 +13,5 @@ struct Product: Hashable, Identifiable {
     var description: String = ""
     var image: String = ""
     var ean: String = ""
+    var payments: [Payment] = []
 }

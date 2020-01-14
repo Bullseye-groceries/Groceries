@@ -10,8 +10,25 @@ import SwiftUI
 
 struct DetailProduct: View {
     var product: Product
-
+    
     var body: some View {
-        Text(product.description)
+        VStack {
+            Image(product.image).resizable().frame(width: 100, height: 100, alignment: .center)
+            Text(product.description)
+            Text(product.ean)
+            Spacer()
+            
+            ScrollView {
+                ForEach(product.payments) { payment in
+                        HStack {
+                            Text(payment.merchant)
+                            Text("R$ \(payment.price)")
+                            Text("\(payment.units) unids")
+                            Text("DateFormatter.dateFormat(fromTemplate: 'dd/MM/yyyy', options: 1, locale: .current))")
+                        }
+                }
+            }
+            Spacer()
+        }
     }
 }
