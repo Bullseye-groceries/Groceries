@@ -17,13 +17,13 @@ struct Item: View {
         return ZStack{
             RoundedRectangle(cornerRadius: 25, style: .continuous).fill(Color.white).shadow(radius: 10)
             HStack {
-                Image(product.image).resizable().frame(width: 50, height: 50)
+                Image(product.image).resizable().scaledToFit().frame(width: 50, height: 50)
                 Spacer()
                 NavigationLink(destination: DetailProduct(product: product)) {
                     VStack {
                         Text(product.description).bold().font(.system(size: 20))
                         Spacer()
-                        Text("RS 13.77")
+                        Text("R$ " + String(format:"%.2f", product.suggestedPrice))
                     }
                 }
             } .padding(20).multilineTextAlignment(.center)
