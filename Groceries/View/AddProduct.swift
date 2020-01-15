@@ -14,6 +14,8 @@ struct AddProduct: View {
     
     @State var showingAlert: Bool = false
     
+    @State var error: Bool = false
+    
     var body: some View {
         
         VStack {
@@ -35,6 +37,9 @@ struct AddProduct: View {
                 print("Adding product...")
                 if(!self.product.description.isEmpty && !self.product.ean.isEmpty){
                     self.listProducts.append(self.product)
+                    self.error = false
+                }else{
+                    self.error = true
                 }
                 self.showingAlert = true
                 self.product.description = ""
@@ -50,10 +55,16 @@ struct AddProduct: View {
                 .cornerRadius(30)
             Spacer()
         }.alert(isPresented: $showingAlert){
+            if error {
+                return  Alert(title: Text("Erro!"),
+                              message: Text("Cadastro não pode ser concluído"),
+                              dismissButton: .default(Text("Ok")))
+            }else{
+                return  Alert(title: Text("Sucesso!"),
+                              message: Text("Cadastro Concluido do produto"),
+                              dismissButton: .default(Text("Continuar")))
+            }
             
-            return  Alert(title: Text("Sucesso!"),
-                          message: Text("Cadastro Concluido do produto"),
-                          dismissButton: .default(Text("Continuar")))
             
         }
     }
