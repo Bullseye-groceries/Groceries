@@ -24,7 +24,7 @@ struct AddProduct: View {
             Spacer()
             Button(action: {
                 print("Adding product...")
-                //self.$listProducts.append(self.product)
+                self.listProducts.append(self.product)
             }) {
                 Text("Cadastrar produto")
             }
