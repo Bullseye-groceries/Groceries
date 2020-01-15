@@ -9,11 +9,26 @@
 import Foundation
 
 class ContentData: ObservableObject {
-    @Published var listProducts: [Product] =
-        [
+ 
+    var df : DateFormatter
+    @Published var listProducts: [Product]
+
+    init(df:DateFormatter) {
+        self.df = df
+    //}
+    //@Published var listProducts: [Product] =
+        listProducts = [
             Product(description: "Molho de Tomate Quero Tradicional 340g", image: "tomato", ean: "71231268312361",
                     payments: [
                         Payment(merchant: "Carrefour", price: 2.99, units: 2, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt:     df.date(from: "2020/01/08 22:31")!
+),
+                        Payment(merchant: "Mercadinho Soares", price: 3.55, units: 3, paidAt:     df.date(from: "2020/01/05 22:31")!
+),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
             ], suggestedPrice: 2.99),
             
@@ -80,15 +95,11 @@ class ContentData: ObservableObject {
             ], suggestedPrice: 19.90 ),
             
             // 15
-
+            
             Product(description: "Fronha 50 x 70cm Microfibra Studio Altenburg" , image: "fronha", ean: "7896233701372", payments: [
                 Payment(merchant: "Zaffari da Cabral", price: 7.90, units: 1, paidAt: Date.init()),
             ], suggestedPrice: 7.90 ),
             
-            
-            
-            
-            
     ]
-    
+    }
 }
