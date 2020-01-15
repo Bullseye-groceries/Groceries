@@ -10,8 +10,9 @@ import SwiftUI
 
 struct AddProduct: View {
     @Binding var listProducts : [Product]
-
     @State var product: Product = Product()
+    
+    @State var showingAlert: Bool = false
     
     var body: some View {
         
@@ -33,6 +34,13 @@ struct AddProduct: View {
             Button(action: {
                 print("Adding product...")
                 self.listProducts.append(self.product)
+                if(self.product.description.isEmpty){
+                    
+                }
+                self.product.description = ""
+                self.product.ean = ""
+                self.showingAlert = true
+                
             }) {
                 Text("Cadastrar produto")
             }.frame(width: 150, height: 50, alignment: .center)
@@ -41,7 +49,11 @@ struct AddProduct: View {
                 ]), startPoint: .leading, endPoint: .trailing))
                 .cornerRadius(30)
             Spacer()
-            }
+        }.alert(isPresented: $showingAlert){
+            return  Alert(title: Text("Sucesso!"),
+            message: Text("Cadastro Concluido do produto"),
+            dismissButton: .default(Text("Continuar")))
         }
+    }
     
 }
