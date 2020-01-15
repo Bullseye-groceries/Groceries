@@ -33,13 +33,13 @@ struct AddProduct: View {
             Spacer()
             Button(action: {
                 print("Adding product...")
-                self.listProducts.append(self.product)
-                if(self.product.description.isEmpty){
-                    
+                if(!self.product.description.isEmpty && !self.product.ean.isEmpty){
+                    self.listProducts.append(self.product)
                 }
+                self.showingAlert = true
                 self.product.description = ""
                 self.product.ean = ""
-                self.showingAlert = true
+                
                 
             }) {
                 Text("Cadastrar produto")
@@ -50,10 +50,12 @@ struct AddProduct: View {
                 .cornerRadius(30)
             Spacer()
         }.alert(isPresented: $showingAlert){
+            
             return  Alert(title: Text("Sucesso!"),
-            message: Text("Cadastro Concluido do produto"),
-            dismissButton: .default(Text("Continuar")))
+                          message: Text("Cadastro Concluido do produto"),
+                          dismissButton: .default(Text("Continuar")))
+            
         }
     }
-    
 }
+
