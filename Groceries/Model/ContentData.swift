@@ -30,6 +30,16 @@ class ContentData: ObservableObject {
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                                                      Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                                                      Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                                                      Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                                                                      Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
             ], suggestedPrice: 2.99),
             
             Product(description: "Cebola-roxa kg", image: "cebola", ean: "7896202900759", payments: [
