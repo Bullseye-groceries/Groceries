@@ -11,24 +11,19 @@ import SwiftUI
 struct DetailProduct: View {
     var product: Product
     
+    let dateFormat = DateFormatter.dateFormat(fromTemplate: "dd/MM/yyyy", options: 1, locale: .current)
+    
     var body: some View {
         VStack {
             Image(product.image).resizable().frame(width: 100, height: 100, alignment: .center)
             Text(product.description)
             Text(product.ean)
             Spacer()
-            
-            ScrollView {
+            List {
                 ForEach(product.payments) { payment in
-                        HStack {
-                            Text(payment.merchant)
-                            Text("R$ \(payment.price)")
-                            Text("\(payment.units) unids")
-                            Text("DateFormatter.dateFormat(fromTemplate: 'dd/MM/yyyy', options: 1, locale: .current))")
-                        }
+                    DetailCell(payment: payment)
                 }
             }
-            Spacer()
         }
     }
 }
