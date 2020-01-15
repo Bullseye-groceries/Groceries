@@ -28,6 +28,6 @@ struct Item: View {
                 }
             } .padding(20).multilineTextAlignment(.center)
         }
-        .frame(width: nil, height:150).padding(.leading, 20).padding(.trailing, 20).padding(.bottom, 5)
+        .frame(width: nil, height:150).padding(.leading, 20).padding(.trailing, 20).padding(.top, 8)
     }
 }
