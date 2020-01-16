@@ -26,7 +26,8 @@ struct ReceiptView: View {
 }
 
 struct Profile: View {
-    @Published var listReceipts: [Receipt] = [
+    //@Published
+    var listReceipts: [Receipt] = [
         Receipt()
     ]
     var body: some View {
