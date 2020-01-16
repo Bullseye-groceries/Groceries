@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct DetailProduct: View {
     var product: Product
@@ -29,11 +30,25 @@ struct DetailProduct: View {
             Spacer()
             Spacer()
             Text("Compras").font(.headline).frame(alignment: .leading)
-            List {
-                ForEach(product.payments) { payment in
-                    DetailCell(payment: payment)
+            
+            ScrollView(.horizontal){
+                HStack {
+                    List {
+                        ForEach(product.payments) { payment in
+                            DetailCell(payment: payment)
+                        }
+                    }.frame(width: 390, height: nil, alignment: .leading).padding(.trailing, 20)
+                    BarChartView(data: ChartData(points: getPrices(payment: product.payments)), title: "Title", legend: "Legendary", form: CGSize(width:360, height:360), valueSpecifier: "%.2f").frame(width: 380, height: 100, alignment: .leading)
                 }
             }
         }.navigationBarItems(trailing: Image(systemName: "square.and.pencil"))
     }
+}
+
+func getPrices(payment: [Payment]) -> [Double] {
+    var payments: [Double] = []
+    for data in payment{
+        payments.append(data.price)
+    }
+    return payments
 }
