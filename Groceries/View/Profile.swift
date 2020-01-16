@@ -60,7 +60,7 @@ struct Profile: View {
     var body: some View {
         VStack {
             Spacer()
-            Image(self.userData.image).resizable().frame(width: 200, height: 200, alignment: .center)
+            Image(self.userData.image).resizable().frame(width: 300, height: 300, alignment: .center)
             Text(self.userData.name)
             Text("CPF \(userData.cpf)")
             Text("\(userData.score) pontos")
