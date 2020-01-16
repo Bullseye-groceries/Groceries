@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Item: View {
-    
+    @Binding var listProducts : [Product]
     var product: Product
     
     var body: some View {
@@ -22,7 +22,7 @@ struct Item: View {
                     Circle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 10)
                 Spacer()
-                NavigationLink(destination: DetailProduct(product: product)) {
+                NavigationLink(destination: DetailProduct(product: product, listProducts: $listProducts)) {
                     VStack {
                         Spacer()
                         Text(product.description).bold().font(.system(size: 20))

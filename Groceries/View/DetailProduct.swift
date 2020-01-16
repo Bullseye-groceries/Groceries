@@ -11,6 +11,12 @@ import SwiftUICharts
 
 struct DetailProduct: View {
     var product: Product
+    @Binding var listProducts : [Product]
+    @State var isModal: Bool = false
+    @State var price = ""
+    @State private var date = Date.init()
+    @State var local = ""
+    @State var quant = ""
     
     let dateFormat = DateFormatter.dateFormat(fromTemplate: "dd/MM/yyyy", options: 1, locale: .current)
     
@@ -41,7 +47,9 @@ struct DetailProduct: View {
                     BarChartView(data: ChartData(points: getPrices(payment: product.payments)), title: "Title", legend: "Legendary", form: CGSize(width:360, height:360), valueSpecifier: "%.2f").frame(width: 380, height: 100, alignment: .leading)
                 }
             }
-        }.navigationBarItems(trailing: Image(systemName: "square.and.pencil"))
+        }.padding(20).navigationBarItems(trailing: NavigationLink(destination: PaymentInfo(product: product, listProducts: $listProducts)) {
+            Image(systemName: "square.and.pencil")
+        })
     }
 }
 
