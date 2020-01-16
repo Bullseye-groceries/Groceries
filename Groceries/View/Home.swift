@@ -32,7 +32,7 @@ struct Home: View {
                 }
             }.navigationBarTitle(Text("Produtos"), displayMode: .inline).navigationBarItems(trailing:
                 NavigationLink(destination: AddProduct(listProducts: self.$listProducts)) {
-                    Text("Add Product")
+                    Text("Adicionar")
                 }
             )
         }

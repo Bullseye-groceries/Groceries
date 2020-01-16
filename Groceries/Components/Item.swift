@@ -17,10 +17,14 @@ struct Item: View {
         return ZStack{
             RoundedRectangle(cornerRadius: 25, style: .continuous).fill(Color.white).shadow(radius: 10)
             HStack {
-                Image(product.image).resizable().scaledToFit().frame(width: 50, height: 50)
+                Image(product.image).resizable().scaledToFit().frame(width: 50, height: 50).clipShape(Circle())
+                .overlay(
+                    Circle().stroke(Color.white, lineWidth: 4))
+                .shadow(radius: 10)
                 Spacer()
                 NavigationLink(destination: DetailProduct(product: product)) {
                     VStack {
+                        Spacer()
                         Text(product.description).bold().font(.system(size: 20))
                         Spacer()
                         Text("R$ " + String(format:"%.2f", product.suggestedPrice))
