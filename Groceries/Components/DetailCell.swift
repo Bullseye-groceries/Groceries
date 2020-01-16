@@ -12,17 +12,19 @@ struct DetailCell: View {
     var payment: Payment
     
     var body: some View {
-        return HStack {
-            VStack {
-                Text(self.payment.merchant)
-                Text(String(format: "%.4f", self.payment.units) + "unids")
-            }
-            Spacer()
-            VStack {
-                Text("R$ " + String(format: "%.2f", self.payment.price))
-                Text(DateFormatter.localizedString(from: self.payment.paidAt, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none))
-            }
-            
+        ZStack {
+            RoundedRectangle(cornerRadius: 25, style: .circular).fill(Color.white).shadow(radius: 2)
+            HStack {
+                VStack {
+                    Text(self.payment.merchant)
+                    Text(DateFormatter.localizedString(from: self.payment.paidAt, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none))
+                }
+                Spacer()
+                VStack {
+                    Text("R$ " + String(format: "%.2f", self.payment.price) + " x " + String(self.payment.units))
+                    Text("R$ " + String(format: "%.2f", self.payment.price * self.payment.units))
+                }.frame(alignment: .trailing)
+            }.padding(10)
         }
     }
 }

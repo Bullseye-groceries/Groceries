@@ -23,8 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         //let someDateTime = formatter.date(from: "2016/10/08 22:31")
         
-
-        
         let content = ContentData(df: formatter)
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView().environmentObject(content)
