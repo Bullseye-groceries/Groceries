@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,8 @@
 		462BEC3E23CE4E2A0095B6AC /* ContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC3D23CE4E2A0095B6AC /* ContentData.swift */; };
 		462BEC4023CF7DBB0095B6AC /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC3F23CF7DBB0095B6AC /* SearchBar.swift */; };
 		462BEC4423CFA1330095B6AC /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC4323CFA1330095B6AC /* DetailCell.swift */; };
+		462BEC4723D0DEED0095B6AC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 462BEC4623D0DEED0095B6AC /* SwiftUICharts */; };
+		462BEC4923D0DFCB0095B6AC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC4823D0DFCB0095B6AC /* TestView.swift */; };
 		EB8E90F523D0D438008CD008 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E90F423D0D438008CD008 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,7 @@
 		462BEC3D23CE4E2A0095B6AC /* ContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentData.swift; sourceTree = "<group>"; };
 		462BEC3F23CF7DBB0095B6AC /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		462BEC4323CFA1330095B6AC /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		462BEC4823D0DFCB0095B6AC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		EB8E90F423D0D438008CD008 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462BEC4723D0DEED0095B6AC /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +170,7 @@
 				462BEC3123CE31BE0095B6AC /* AddProduct.swift */,
 				462BEC3323CE31C60095B6AC /* DetailProduct.swift */,
 				EB8E90F423D0D438008CD008 /* Profile.swift */,
+				462BEC4823D0DFCB0095B6AC /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +211,9 @@
 			dependencies = (
 			);
 			name = Groceries;
+			packageProductDependencies = (
+				462BEC4623D0DEED0095B6AC /* SwiftUICharts */,
+			);
 			productName = Groceries;
 			productReference = 462BEBFA23CE2F900095B6AC /* Groceries.app */;
 			productType = "com.apple.product-type.application";
@@ -278,6 +286,9 @@
 				Base,
 			);
 			mainGroup = 462BEBF123CE2F900095B6AC;
+			packageReferences = (
+				462BEC4523D0DEED0095B6AC /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 462BEBFB23CE2F900095B6AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -321,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462BEC4923D0DFCB0095B6AC /* TestView.swift in Sources */,
 				462BEC3223CE31BE0095B6AC /* AddProduct.swift in Sources */,
 				462BEC3E23CE4E2A0095B6AC /* ContentData.swift in Sources */,
 				462BEC4423CFA1330095B6AC /* DetailCell.swift in Sources */,
@@ -652,6 +664,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		462BEC4523D0DEED0095B6AC /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		462BEC4623D0DEED0095B6AC /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462BEC4523D0DEED0095B6AC /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 462BEBF223CE2F900095B6AC /* Project object */;
 }

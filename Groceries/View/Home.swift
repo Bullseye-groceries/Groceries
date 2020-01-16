@@ -15,7 +15,8 @@ struct Home: View {
     @State private var searchTerm : String = ""
     
     init(listProducts: Binding<[Product]>) {
-        UITableView.appearance().separatorStyle = .none
+         UITableView.appearance().separatorStyle = .singleLine
+        
         self._listProducts = listProducts
     }
     
@@ -33,8 +34,9 @@ struct Home: View {
             }.navigationBarTitle(Text("Produtos"), displayMode: .inline).navigationBarItems(trailing:
                 NavigationLink(destination: AddProduct(listProducts: self.$listProducts)) {
                     Text("Add Product")
-                }
+                    }
             )
         }
     }
+    
 }
