@@ -31,22 +31,29 @@ struct UserData: Identifiable, Hashable {
 struct ReceiptView: View {
     var receipt: Receipt
     var body: some View {
-        return HStack {
-            VStack {
-                Text(self.receipt.place)
-                Text("Imported")
+        ZStack {
+            RoundedRectangle(cornerRadius: 25, style: .circular).fill(Color.white).shadow(radius: 2)
+            HStack {
+                Spacer()
+                VStack {
+                    Text(self.receipt.place)
+                    Text("Imported")
+                }
+                Spacer()
+                VStack {
+                    Text("R$ " + String(format: "%.2f", self.receipt.value))
+                    Text(DateFormatter.localizedString(from: self.receipt.date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none))
+                }.frame(alignment: .trailing)
+                Spacer()
             }
             Spacer()
-            VStack {
-                Text("R$ " + String(format: "%.2f", self.receipt.value))
-                Text(DateFormatter.localizedString(from: self.receipt.date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none))
-            }
-        }    }
+        }
+    }
     
 }
 
 struct Profile: View {
-
+    
     var userData: UserData = UserData(image: "carol", name: "Carolina Portaluppi", cpf:"456.457.460-00", score: 14900, team: "Grêmio F.B.P.A.")
     
     var listReceipts: [Receipt] = [
@@ -66,6 +73,8 @@ struct Profile: View {
             Text("\(userData.score) pontos")
             Text("Time do coração: \(userData.team)")
             Spacer()
+            Text("Notas Fiscais").font(.headline).frame(alignment: .leading)
+            
             List {
                 ForEach(listReceipts) {r in
                     ReceiptView(receipt: r)

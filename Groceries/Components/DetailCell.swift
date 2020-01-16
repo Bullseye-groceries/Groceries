@@ -28,10 +28,10 @@ struct DetailCell: View {
                 Spacer()
             }
             Spacer()
-            VStack {
-                Text("R$ " + String(format: "%.2f", self.payment.price))
-                Text(DateFormatter.localizedString(from: self.payment.paidAt, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none))
-            }
+            //VStack {
+            //    Text("R$ " + String(format: "%.2f", self.payment.price))
+            //    Text(DateFormatter.localizedString(from: self.payment.paidAt, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none))
+            //}
         }
     }
 }
