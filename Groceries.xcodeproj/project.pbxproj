@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02674A8723D0D7F9006A5DD2 /* PaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02674A8623D0D7F9006A5DD2 /* PaymentInfo.swift */; };
 		462BEBFE23CE2F900095B6AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEBFD23CE2F900095B6AC /* AppDelegate.swift */; };
 		462BEC0023CE2F900095B6AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEBFF23CE2F900095B6AC /* SceneDelegate.swift */; };
 		462BEC0223CE2F900095B6AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC0123CE2F900095B6AC /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02674A8623D0D7F9006A5DD2 /* PaymentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfo.swift; sourceTree = "<group>"; };
 		462BEBFA23CE2F900095B6AC /* Groceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462BEBFD23CE2F900095B6AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462BEBFF23CE2F900095B6AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				462BEC3D23CE4E2A0095B6AC /* ContentData.swift */,
 				462BEC3723CE331A0095B6AC /* Product.swift */,
 				462BEC3B23CE46F60095B6AC /* Payment.swift */,
+				02674A8623D0D7F9006A5DD2 /* PaymentInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				462BEC0223CE2F900095B6AC /* ContentView.swift in Sources */,
 				462BEC3423CE31C60095B6AC /* DetailProduct.swift in Sources */,
 				462BEC3C23CE46F60095B6AC /* Payment.swift in Sources */,
+				02674A8723D0D7F9006A5DD2 /* PaymentInfo.swift in Sources */,
 				462BEC4023CF7DBB0095B6AC /* SearchBar.swift in Sources */,
 				462BEC3823CE331A0095B6AC /* Product.swift in Sources */,
 			);
