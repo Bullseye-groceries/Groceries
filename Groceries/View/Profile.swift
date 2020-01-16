@@ -62,7 +62,7 @@ struct Profile: View {
             Spacer()
             Image(self.userData.image).resizable().frame(width: 300, height: 300, alignment: .center)
             Text(self.userData.name)
-            Text("CPF \(userData.cpf)")
+            Text("(\(userData.cpf))")
             Text("\(userData.score) pontos")
             Text("Time do coração: \(userData.team)")
             Spacer()
