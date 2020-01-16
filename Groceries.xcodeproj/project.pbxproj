@@ -24,6 +24,7 @@
 		462BEC3E23CE4E2A0095B6AC /* ContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC3D23CE4E2A0095B6AC /* ContentData.swift */; };
 		462BEC4023CF7DBB0095B6AC /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC3F23CF7DBB0095B6AC /* SearchBar.swift */; };
 		462BEC4423CFA1330095B6AC /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC4323CFA1330095B6AC /* DetailCell.swift */; };
+		EB8E90F523D0D438008CD008 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E90F423D0D438008CD008 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		462BEC3D23CE4E2A0095B6AC /* ContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentData.swift; sourceTree = "<group>"; };
 		462BEC3F23CF7DBB0095B6AC /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		462BEC4323CFA1330095B6AC /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		EB8E90F423D0D438008CD008 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				462BEC2F23CE31B30095B6AC /* Home.swift */,
 				462BEC3123CE31BE0095B6AC /* AddProduct.swift */,
 				462BEC3323CE31C60095B6AC /* DetailProduct.swift */,
+				EB8E90F423D0D438008CD008 /* Profile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				462BEC3223CE31BE0095B6AC /* AddProduct.swift in Sources */,
 				462BEC3E23CE4E2A0095B6AC /* ContentData.swift in Sources */,
 				462BEC4423CFA1330095B6AC /* DetailCell.swift in Sources */,
+				EB8E90F523D0D438008CD008 /* Profile.swift in Sources */,
 				462BEBFE23CE2F900095B6AC /* AppDelegate.swift in Sources */,
 				462BEC0023CE2F900095B6AC /* SceneDelegate.swift in Sources */,
 				462BEC3023CE31B30095B6AC /* Home.swift in Sources */,
