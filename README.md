@@ -1,5 +1,6 @@
 # Groceries
 
+Groceries application allows you to browse the history of receipts from products. Information about every product you love is available. Never buy the wrong product again by mistake! Save time and money.
 
 ## Product
 
@@ -17,6 +18,10 @@ Display product detail and payment history.
 Manually add a new product.
 
 <img src="https://user-images.githubusercontent.com/595430/72558740-122c0480-3882-11ea-99cb-4c380703ed1d.png" width="300">
+
+### Add Payment
+
+Manually add a new payment for a product.
 
 ## User and Data Integration
 
