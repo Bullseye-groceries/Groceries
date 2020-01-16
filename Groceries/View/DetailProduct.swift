@@ -10,6 +10,12 @@ import SwiftUI
 
 struct DetailProduct: View {
     var product: Product
+    @State var isModal: Bool = false
+    @State var price = ""
+    @State private var date = Date.init()
+    @State var local = ""
+    @State var quant = ""
+    
     
     let dateFormat = DateFormatter.dateFormat(fromTemplate: "dd/MM/yyyy", options: 1, locale: .current)
     
@@ -31,6 +37,9 @@ struct DetailProduct: View {
                     DetailCell(payment: payment)
                 }
             }
-        }.padding(20)
+        }.padding(20).navigationBarItems(leading: NavigationLink(destination: PaymentInfo(price: $price, date: $date, local: $local, quant: $quant)){
+            Image(systemName: "square.and.pencil")
+        })
+        
+        }
     }
-}

@@ -9,20 +9,18 @@
 import SwiftUI
 
 struct PaymentInfo: View{
-    
-    @Binding var isModal: Bool
     @State var payment = Payment()
-    @State var price: String
-    @State var dateString: String
-    private var date: Date
-    @State var local: String
-    @State var quant: String
+    @Binding var price: String
+    private var dateString: String
+    @Binding private var date: Date
+    @Binding var local: String
+    @Binding var quant: String
     
     var body: some View{
         VStack{
             TextField("Local da Compra", text: $local)
                 .frame(width: 300, height: 60, alignment: .center)
-                .foregroundColor(.gray)
+                .foregroundColor(Color.gray)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             TextField("Preço do Produto", text: $price)
@@ -37,23 +35,16 @@ struct PaymentInfo: View{
                 .padding()
             
             Button(action: {
-                print("Adding product...")
+                print("Adding info...")
                 self.payment.price = (self.price as NSString).doubleValue
                 
                 self.payment.merchant = self.local
                 
                 self.payment.units = (self.quant as NSString).doubleValue
                 
-                
-                
             }) {
                 Text("Atualizar informações")
-            }.frame(width: 150, height: 50, alignment: .center)
-                .foregroundColor(.black)
-                .background(LinearGradient(gradient: Gradient(colors: [Color.orange, Color.yellow
-                ]), startPoint: .leading, endPoint: .trailing))
-                .cornerRadius(30)
-            Spacer()
+            }
         }
     }
     
