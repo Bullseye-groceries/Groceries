@@ -22,6 +22,6 @@ struct ContentView: View {
                     Image(systemName: "list.dash")
                     Text("Perfil")
             }
-        }
+        }.accentColor(Color.orange)
     }
 }
