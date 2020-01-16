@@ -17,10 +17,10 @@ struct ContentView: View {
                     Image(systemName: "house.fill")
                     Text("Produtos")
             }
-            AddProduct(listProducts: $content.listProducts)
+            Profile()
                 .tabItem {
                     Image(systemName: "list.dash")
-                    Text("Cadastrar")
+                    Text("Perfil")
             }
         }
     }
