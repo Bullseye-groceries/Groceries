@@ -15,7 +15,7 @@ struct Home: View {
     @State private var searchTerm : String = ""
     
     init(listProducts: Binding<[Product]>) {
-         UITableView.appearance().separatorStyle = .singleLine
+         UITableView.appearance().separatorStyle = .none
         
         self._listProducts = listProducts
     }
