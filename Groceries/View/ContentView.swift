@@ -12,7 +12,7 @@ struct ContentView: View {
     @EnvironmentObject var content : ContentData
     var body: some View {
         TabView {
-            Home(listProducts: content.listProducts)
+            Home(listProducts: $content.listProducts)
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Produtos")
