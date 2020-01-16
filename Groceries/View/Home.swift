@@ -10,17 +10,16 @@ import SwiftUI
 
 struct Home: View {
     
-    var listProducts : [Product]
+    @Binding var listProducts : [Product]
     
     @State private var searchTerm : String = ""
     
-    init(listProducts: [Product]) {
+    init(listProducts: Binding<[Product]>) {
         UITableView.appearance().separatorStyle = .none
-        self.listProducts = listProducts
+        self._listProducts = listProducts
     }
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 SearchBar(text: $searchTerm)
@@ -31,8 +30,11 @@ struct Home: View {
                         Item(product: item)
                     }
                 }
-            }.navigationBarTitle(Text("Produtos"), displayMode: .inline)
+            }.navigationBarTitle(Text("Produtos"), displayMode: .inline).navigationBarItems(trailing:
+                NavigationLink(destination: AddProduct(listProducts: self.$listProducts)) {
+                    Text("Add Product")
+                }
+            )
         }
     }
 }
-

@@ -18,7 +18,7 @@ struct AddProduct: View {
     
     var body: some View {
         
-        VStack {
+        return VStack {
             Spacer()
             //TODO: FIXME: Image(product.image).resizable().frame(width: 100, height: 100, alignment: .center)
             
