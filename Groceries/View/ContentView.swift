@@ -17,7 +17,7 @@ struct ContentView: View {
                     Image(systemName: "house.fill")
                     Text("Produtos")
             }
-            Profile()
+            Profile(userData: $content.userData, listReceipts: $content.listReceipts)
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Perfil")

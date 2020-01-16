@@ -8,11 +8,10 @@
 
 import Foundation
 
-
-//struct Receipt: Identifiable, Hashable {
-//    var id: UUID = UUID()
-//    var place: String = ""
-//    var date: Date = Date.init()
-//    var value: Double = 0.0
-//    var imported: Bool = false
-//}
+struct Receipt: Identifiable, Hashable {
+    var id: UUID = UUID()
+    var place: String = ""
+    var date: Date = Date.init()
+    var value: Double = 0.0
+    var imported: Bool = false
+}
