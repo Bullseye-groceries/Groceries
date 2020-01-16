@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Item: View {
-    
+    @Binding var listProducts : [Product]
     var product: Product
     
     var body: some View {
@@ -19,7 +19,7 @@ struct Item: View {
             HStack {
                 Image(product.image).resizable().scaledToFit().frame(width: 50, height: 50)
                 Spacer()
-                NavigationLink(destination: DetailProduct(product: product)) {
+                NavigationLink(destination: DetailProduct(product: product, listProducts: $listProducts)) {
                     VStack {
                         Text(product.description).bold().font(.system(size: 20))
                         Spacer()

@@ -9,15 +9,14 @@
 import SwiftUI
 
 struct PaymentInfo: View{
-    @State var payment = Payment()
-    @Binding var price: String
-    private var dateString: String
-    @Binding private var date: Date
-    @Binding var local: String
-    @Binding var quant: String
+    @State var product: Product
+    @Binding var listProducts : [Product]
+    @State var price: String = ""
+    @State var local: String = ""
+    @State var quant: String = ""
     
     var body: some View{
-        VStack{
+        return VStack{
             TextField("Local da Compra", text: $local)
                 .frame(width: 300, height: 60, alignment: .center)
                 .foregroundColor(Color.gray)
@@ -36,12 +35,16 @@ struct PaymentInfo: View{
             
             Button(action: {
                 print("Adding info...")
-                self.payment.price = (self.price as NSString).doubleValue
+                var payment = Payment()
+                payment.price = (self.price as NSString).doubleValue
+                payment.units = (self.quant as NSString).doubleValue
+                payment.merchant = self.local
                 
-                self.payment.merchant = self.local
-                
-                self.payment.units = (self.quant as NSString).doubleValue
-                
+                self.product.payments.append(payment)
+                self.listProducts.removeAll(where: { product in
+                    return self.product.id == product.id
+                })
+                self.listProducts.append(self.product)
             }) {
                 Text("Atualizar informações")
             }

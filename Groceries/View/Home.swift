@@ -27,7 +27,7 @@ struct Home: View {
                     ForEach(self.listProducts.filter {
                         self.searchTerm.isEmpty ? true : $0.description.localizedStandardContains(self.searchTerm)
                     }, id:\.self) { item in
-                        Item(product: item)
+                        Item(listProducts: self.$listProducts, product: item)
                     }
                 }
             }.navigationBarTitle(Text("Produtos"), displayMode: .inline).navigationBarItems(trailing:
