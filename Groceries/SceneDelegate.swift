@@ -19,11 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+
         //let someDateTime = formatter.date(from: "2016/10/08 22:31")
         
-        let content = ContentData(df: formatter)
+        let content = ContentData()
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView().environmentObject(content)
 

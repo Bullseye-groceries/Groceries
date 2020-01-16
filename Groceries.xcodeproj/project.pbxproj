@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,7 +25,12 @@
 		462BEC3E23CE4E2A0095B6AC /* ContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC3D23CE4E2A0095B6AC /* ContentData.swift */; };
 		462BEC4023CF7DBB0095B6AC /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC3F23CF7DBB0095B6AC /* SearchBar.swift */; };
 		462BEC4423CFA1330095B6AC /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC4323CFA1330095B6AC /* DetailCell.swift */; };
+		462BEC4723D0DEED0095B6AC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 462BEC4623D0DEED0095B6AC /* SwiftUICharts */; };
+		462BEC4923D0DFCB0095B6AC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEC4823D0DFCB0095B6AC /* TestView.swift */; };
+		466F0DFB23D0F25400679656 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466F0DFA23D0F25400679656 /* User.swift */; };
+		466F0DFD23D0F29E00679656 /* ReceiptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466F0DFC23D0F29E00679656 /* ReceiptCell.swift */; };
 		EB8E90F523D0D438008CD008 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E90F423D0D438008CD008 /* Profile.swift */; };
+		EB8E90F723D0DE92008CD008 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E90F623D0DE92008CD008 /* Receipt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +75,11 @@
 		462BEC3D23CE4E2A0095B6AC /* ContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentData.swift; sourceTree = "<group>"; };
 		462BEC3F23CF7DBB0095B6AC /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		462BEC4323CFA1330095B6AC /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		462BEC4823D0DFCB0095B6AC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		466F0DFA23D0F25400679656 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		466F0DFC23D0F29E00679656 /* ReceiptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptCell.swift; sourceTree = "<group>"; };
 		EB8E90F423D0D438008CD008 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		EB8E90F623D0DE92008CD008 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462BEC4723D0DEED0095B6AC /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +178,7 @@
 				462BEC3123CE31BE0095B6AC /* AddProduct.swift */,
 				462BEC3323CE31C60095B6AC /* DetailProduct.swift */,
 				EB8E90F423D0D438008CD008 /* Profile.swift */,
+				462BEC4823D0DFCB0095B6AC /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +189,7 @@
 				462BEC3923CE3AC30095B6AC /* Item.swift */,
 				462BEC3F23CF7DBB0095B6AC /* SearchBar.swift */,
 				462BEC4323CFA1330095B6AC /* DetailCell.swift */,
+				466F0DFC23D0F29E00679656 /* ReceiptCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -185,10 +197,12 @@
 		462BEC3623CE32CA0095B6AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB8E90F623D0DE92008CD008 /* Receipt.swift */,
 				462BEC3D23CE4E2A0095B6AC /* ContentData.swift */,
 				462BEC3723CE331A0095B6AC /* Product.swift */,
 				462BEC3B23CE46F60095B6AC /* Payment.swift */,
 				02674A8623D0D7F9006A5DD2 /* PaymentInfo.swift */,
+				466F0DFA23D0F25400679656 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +223,9 @@
 			dependencies = (
 			);
 			name = Groceries;
+			packageProductDependencies = (
+				462BEC4623D0DEED0095B6AC /* SwiftUICharts */,
+			);
 			productName = Groceries;
 			productReference = 462BEBFA23CE2F900095B6AC /* Groceries.app */;
 			productType = "com.apple.product-type.application";
@@ -281,6 +298,9 @@
 				Base,
 			);
 			mainGroup = 462BEBF123CE2F900095B6AC;
+			packageReferences = (
+				462BEC4523D0DEED0095B6AC /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 462BEBFB23CE2F900095B6AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,9 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462BEC4923D0DFCB0095B6AC /* TestView.swift in Sources */,
 				462BEC3223CE31BE0095B6AC /* AddProduct.swift in Sources */,
+				466F0DFB23D0F25400679656 /* User.swift in Sources */,
 				462BEC3E23CE4E2A0095B6AC /* ContentData.swift in Sources */,
+				EB8E90F723D0DE92008CD008 /* Receipt.swift in Sources */,
 				462BEC4423CFA1330095B6AC /* DetailCell.swift in Sources */,
+				466F0DFD23D0F29E00679656 /* ReceiptCell.swift in Sources */,
 				EB8E90F523D0D438008CD008 /* Profile.swift in Sources */,
 				462BEBFE23CE2F900095B6AC /* AppDelegate.swift in Sources */,
 				462BEC0023CE2F900095B6AC /* SceneDelegate.swift in Sources */,
@@ -656,6 +680,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		462BEC4523D0DEED0095B6AC /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		462BEC4623D0DEED0095B6AC /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462BEC4523D0DEED0095B6AC /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 462BEBF223CE2F900095B6AC /* Project object */;
 }

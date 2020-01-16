@@ -9,45 +9,39 @@
 import Foundation
 import SwiftUI
 
-
-struct Receipt: Identifiable, Hashable {
-    var id: UUID = UUID()
-    var place: String = ""
-    var date: Date = Date.init()
-
-}
-
-
-struct ReceiptView: View {
-    var body: some View {
-        Text("Receipt View")
-    }
-    
-}
-
 struct Profile: View {
-    //@Published
-    var listReceipts: [Receipt] = [
-        Receipt()
-    ]
+    @Binding var userData: User
+    @Binding var listReceipts: [Receipt]
+    
     var body: some View {
         VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 45, style: .circular).fill(Color.orange).shadow(radius: 5)
+                VStack {
+                    Spacer()
+                    Image(self.userData.image).resizable().frame(width: 300, height: 300, alignment: .center).clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 10)
+                    Text(self.userData.name)
+                    Text("(\(userData.cpf))")
+                    Text("\(userData.score) pontos")
+                    Text("Time do coração: \(userData.team)")
+                }.padding(.top, 80).padding(.bottom, 20)
+            }.frame(height: 400, alignment: .leading).offset(y: -40)
             Spacer()
-            Image("carol").resizable().frame(width: 200, height: 200, alignment: .center)
-            Text("Carolina Portaluppi")
-            Text("CPF: 456.457.460-00")
-            Text("14.900 pontos")
-            Text("Time do coração: Grêmio F.B.P.A.")
             Spacer()
-            VStack {
-                HStack {
-                    Text("Zaffari da Cabral")
-                    Text("08/01/2020")
-                    Text("Imported")
+            Text("Notas Fiscais").font(.headline).frame(alignment: .leading)
+            
+            List {
+                ForEach(listReceipts) {r in
+                    ReceiptCell(receipt: r)
                 }
             }
             Spacer()
         }
     }
+    
+    
     
 }

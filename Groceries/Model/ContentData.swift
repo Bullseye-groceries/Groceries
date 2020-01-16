@@ -9,37 +9,41 @@
 import Foundation
 
 class ContentData: ObservableObject {
- 
+    
     var df : DateFormatter
     @Published var listProducts: [Product]
-
-    init(df:DateFormatter) {
-        self.df = df
-    //}
-    //@Published var listProducts: [Product] =
+    @Published var userData: User
+    @Published var listReceipts: [Receipt]
+    
+    init() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        self.df = formatter
+        //}
+        //@Published var listProducts: [Product] =
         listProducts = [
             Product(description: "Molho de Tomate Quero Tradicional 340g", image: "tomato", ean: "71231268312361",
                     payments: [
                         Payment(merchant: "Carrefour", price: 2.99, units: 2, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt:     df.date(from: "2020/01/08 22:31")!
-),
+                        ),
                         Payment(merchant: "Mercadinho Soares", price: 3.55, units: 3, paidAt:     df.date(from: "2020/01/05 22:31")!
-),
+                        ),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
                         Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                               Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                                                      Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                                                      Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                                                      Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
-                                                                      Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
+                        Payment(merchant: "Zaffari da Cristóvão", price: 3.55, units: 3, paidAt: Date.init()),
             ], suggestedPrice: 2.99),
             
             Product(description: "Cebola-roxa kg", image: "cebola", ean: "7896202900759", payments: [
@@ -110,6 +114,16 @@ class ContentData: ObservableObject {
                 Payment(merchant: "Zaffari da Cabral", price: 7.90, units: 1, paidAt: Date.init()),
             ], suggestedPrice: 7.90 ),
             
-    ]
+        ]
+        
+        userData = User(image: "carol", name: "Carolina Portaluppi", cpf:"456.457.460-00", score: 14900, team: "Grêmio F.B.P.A.")
+        
+        listReceipts = [
+            Receipt(place: "Zaffari da Cabral", date: Date.init(), value: 350.29, imported: true),
+            Receipt(place: "Zaffari da Cristóvão", date: Date.init(), value: 150.90, imported: true),
+            Receipt(place: "Bourbon Ipiranga", date: Date.init(), value: 350.29, imported: true),
+            Receipt(place: "Mercadinho Soares", date: Date.init(), value: 350.29, imported: true),
+            Receipt(place: "Zaffari Total ", date: Date.init(), value: 350.29, imported: true),
+        ]
     }
 }
