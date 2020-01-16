@@ -18,10 +18,13 @@ struct DetailProduct: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 45, style: .circular).fill(Color.orange).shadow(radius: 5)
                 VStack {
-                    Image(product.image).resizable().frame(width: 100, height: 100, alignment: .center).cornerRadius(25)
+                    Image(product.image).resizable().frame(width: 100, height: 100, alignment: .center).clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 10)
                     Text(product.description).bold().font(.system(size: 20))
                     Text(product.ean).font(.system(size: 20))
-                }.padding(.top, 70).padding(.bottom, 20)
+                }.padding(.top, 80).padding(.bottom, 20)
             }.frame(height: 200, alignment: .leading).offset(y: -40)
             Spacer()
             Spacer()
@@ -31,6 +34,6 @@ struct DetailProduct: View {
                     DetailCell(payment: payment)
                 }
             }
-            }.navigationBarItems(trailing: Image(systemName: "square.and.pencil"))
+        }.navigationBarItems(trailing: Image(systemName: "square.and.pencil"))
     }
 }
