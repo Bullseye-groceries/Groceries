@@ -34,4 +34,4 @@ List user data and status of data integration from external server.
 
 # Model
 
-![image](https://user-images.githubusercontent.com/595430/72601256-cfa31000-38f3-11ea-9e25-3270461128d1.png)
+![image](https://user-images.githubusercontent.com/595430/72612641-1b61b380-390c-11ea-8a8c-62bc8019d3d0.png)
