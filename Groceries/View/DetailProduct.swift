@@ -44,7 +44,7 @@ struct DetailProduct: View {
                             DetailCell(payment: payment)
                         }
                     }.frame(width: 390, height: nil, alignment: .leading).padding(.trailing, 20)
-                    BarChartView(data: ChartData(points: getPrices(payment: product.payments)), title: "Title", legend: "Legendary", form: CGSize(width:360, height:360), valueSpecifier: "%.2f").frame(width: 380, height: 100, alignment: .leading)
+                    BarChartView(data: ChartData(points: getPrices(payment: product.payments)), title: "Preços", form: CGSize(width:360, height:360), valueSpecifier: "%.2f").frame(width: 380, height: 100, alignment: .leading)
                 }
             }
         }.padding(20).navigationBarItems(trailing: NavigationLink(destination: PaymentInfo(product: product, listProducts: $listProducts)) {
